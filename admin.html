@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel do Barbeiro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Painel do Barbeiro</h1>
+
+  <!-- PAINEL PREÇOS -->
+  <section class="painel">
+    <h2>Valores dos Serviços</h2>
+
+    <div class="precos">
+      <label>Degradê:
+        <input type="number" id="precoDegrade">
+      </label>
+
+      <label>Social:
+        <input type="number" id="precoSocial">
+      </label>
+
+      <label>Tesoura:
+        <input type="number" id="precoTesoura">
+      </label>
+
+      <label>Barba:
+        <input type="number" id="precoBarba">
+      </label>
+
+      <label>Sobrancelha:
+        <input type="number" id="precoSobrancelha">
+      </label>
+
+      <button onclick="salvarPrecos()">Salvar Preços</button>
+    </div>
+  </section>
+
+  <!-- BLOQUEIO HORARIO -->
+  <section class="painel">
+    <h2>Bloquear Horário</h2>
+
+    <label>Data</label>
+    <input type="date" id="bloqueioData">
+
+    <label>Horário</label>
+    <select id="bloqueioHora"></select>
+
+    <button onclick="bloquearHorario()">Bloquear</button>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="painel">
+    <h2>Agenda</h2>
+    <ul id="listaAgendamentos"></ul>
+  </section>
+
+  <script src="admin.js"></script>
+</body>
+</html>

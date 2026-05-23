@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Agendamento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="painel">
+  <h1>Agendamento Barbearia</h1>
+
+  <!-- AGENDAMENTO -->
+  <form id="formAgendamento" class="formulario">
+
+    <input type="text" id="nome" placeholder="Nome do cliente" required>
+    <input type="tel" id="telefone" placeholder="WhatsApp (ex: 99 9xxxx-xxxx)" required>
+
+    <input type="date" id="data" required>
+
+    <select id="hora" required>
+      <option value="">Selecione o horário</option>
+    </select>
+
+    <!-- CORTES DE CABELO-->
+    <fieldset class="servicos">
+      <legend>Serviços</legend>
+
+      <div class="cortes">
+        <label class="opcao-corte">
+          <input type="radio" name="corte" value="Degradê">
+          <span>Degradê <small>(R$ <b id="precoDegrade"></b>)</small></span>
+        </label>
+
+        <label class="opcao-corte">
+          <input type="radio" name="corte" value="Social">
+          <span>Social <small>(R$ <b id="precoSocial"></b>)</small></span>
+        </label>
+
+        <label class="opcao-corte">
+          <input type="radio" name="corte" value="Tesoura">
+          <span>Tesoura <small>(R$ <b id="precoTesoura"></b>)</small></span>
+        </label>
+      </div>
+
+      <!--BARBA E SOMBRANCELHA-->
+      <div class="extras">
+        <label class="opcao-extra">
+          <input type="checkbox" id="barba">
+          <span>Barba <small>(R$ <b id="precoBarba"></b>)</small></span>
+        </label>
+
+        <label class="opcao-extra">
+          <input type="checkbox" id="sobrancelha">
+          <span>Sobrancelha <small>(R$ <b id="precoSobrancelha"></b>)</small></span>
+        </label>
+      </div>
+    </fieldset>
+
+    <p class="total">Total: R$ <span id="total">0.00</span></p>
+
+    <button type="submit">Agendar</button>
+
+  </form>
+
+  <div id="mensagem" class="mensagem"></div>
+
+  <!-- COMPROVANTE -->
+  <div id="comprovante">
+  <h3>BARBEARIA</h3>
+  <hr>
+
+  <div id="comprovanteConteudo"></div>
+
+  <hr>
+  <p style="text-align:center;">Obrigado pela preferência!</p>
+
+  <button onclick="imprimirComprovante()">Imprimir</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

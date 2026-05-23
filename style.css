@@ -1,0 +1,268 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #989898, #0f172a);
+  color: #e2e8f0;
+  padding: 20px;
+}
+
+/* TÍTULOS */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f5c423;
+  font-size: 28px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #f5c423;
+}
+
+/* PAINEL */
+.painel {
+  max-width: 700px;
+  margin: 20px auto;
+  background: rgba(30, 41, 59, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: 0.3s;
+}
+
+.painel:hover {
+  transform: translateY(-3px);
+}
+
+/* FORMULARIO */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* INPUTS */
+input, select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  outline: none;
+  background: #334155;
+  color: #fff;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+input:focus, select:focus {
+  border: 1px solid #f5c423;
+  background: #1e293b;
+}
+
+/* PLACEHOLDER */
+input::placeholder {
+  color: #94a3b8;
+}
+
+/* FIELDSET */
+fieldset {
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+legend {
+  padding: 0 10px;
+  color: #f5c423;
+  font-weight: bold;
+}
+
+/* SERVIÇOS */
+.cortes, .extras {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* OPÇÕES */
+.opcao-corte, .opcao-extra {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #334155;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 1px solid transparent;
+}
+
+.opcao-corte:hover, .opcao-extra:hover {
+  background: #475569;
+  border: 1px solid #f5c423;
+}
+
+/* INPUT RADIO/CHECK */
+input[type="radio"],
+input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* TEXTO PEQUENO */
+small {
+  color: #94a3b8;
+}
+
+/* TOTAL */
+.total {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #22c55e;
+}
+
+/* BOTÃO */
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f5c423, #eab308);
+  color: #020617;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #eab308, #f5c423);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* MENSAGEM */
+.mensagem {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* COMPROVANTE */
+.comprovante {
+  margin-top: 20px;
+  padding: 20px;
+  background: #020617;
+  border-radius: 10px;
+  border: 1px solid #334155;
+}
+
+/* GRID ADMIN */
+.precos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+/* LABEL ADMIN */
+.precos label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  gap: 5px;
+}
+
+/* BOTÃO GRID */
+.precos button {
+  grid-column: 1 / -1;
+}
+
+/* AGENDA */
+#listaAgendamentos {
+  list-style: none;
+  margin-top: 10px;
+}
+
+/* ITEM AGENDA */
+#listaAgendamentos li {
+  background: #334155;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #f5c423;
+  transition: 0.2s;
+}
+
+#listaAgendamentos li:hover {
+  background: #475569;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .painel {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+}
+/* ===== COMPROVANTE ===== */
+#comprovante {
+  display: none;
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px dashed #999;
+  background: #fff;
+  color: #000;
+  font-family: monospace;
+  text-align: left;
+}
+
+#comprovante h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#comprovante hr {
+  margin: 10px 0;
+}
+
+#comprovante p {
+  margin: 6px 0;
+}
+
+/* ===== IMPRESSÃO ===== */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #comprovante, #comprovante * {
+    visibility: visible;
+  }
+
+  #comprovante {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
