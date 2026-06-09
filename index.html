@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Agendamento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav-links">
+  <a href="index.html" class="ativo">Agendamento</a>
+  <a href="pages/perfil.html">Meu Perfil</a>
+  <button type="button" id="btnLogout" class="nav-button">Sair</button>
+</nav>
+
+<div class="painel">
+  <h1>Agendamento Barbearia</h1>
+  <p id="usuarioInfo" class="auth-subtitulo"></p>
+
+  <form id="formAgendamento" class="formulario">
+    <input type="date" id="data" required>
+
+    <select id="hora" required>
+      <option value="">Selecione o horário</option>
+    </select>
+
+    <fieldset class="servicos">
+      <legend>Serviços</legend>
+
+      <div class="cortes">
+        <label class="opcao-servico">
+          <input type="radio" name="corte" value="Degradê">
+          <span class="nome-servico">Degradê</span>
+          <span class="valor-servico">R$ <span id="precoDegrade"></span></span>
+        </label>
+
+        <label class="opcao-servico">
+          <input type="radio" name="corte" value="Social">
+          <span class="nome-servico">Social</span>
+          <span class="valor-servico">R$ <span id="precoSocial"></span></span>
+        </label>
+
+        <label class="opcao-servico">
+          <input type="radio" name="corte" value="Tesoura">
+          <span class="nome-servico">Tesoura</span>
+          <span class="valor-servico">R$ <span id="precoTesoura"></span></span>
+        </label>
+      </div>
+
+      <div class="extras">
+        <label class="opcao-servico">
+          <input type="checkbox" id="barba">
+          <span class="nome-servico">Barba</span>
+          <span class="valor-servico">R$ <span id="precoBarba"></span></span>
+        </label>
+
+        <label class="opcao-servico">
+          <input type="checkbox" id="sobrancelha">
+          <span class="nome-servico">Sobrancelha</span>
+          <span class="valor-servico">R$ <span id="precoSobrancelha"></span></span>
+        </label>
+      </div>
+    </fieldset>
+
+    <p class="total">Total: R$ <span id="total">0.00</span></p>
+
+    <button type="submit">Agendar</button>
+  </form>
+
+  <div id="mensagem" class="mensagem"></div>
+
+  <div id="comprovante">
+    <h3>BARBEARIA</h3>
+    <hr>
+    <div id="comprovanteConteudo"></div>
+    <hr>
+    <p style="text-align:center;">Obrigado pela preferência!</p>
+    <button type="button" onclick="imprimirComprovante()">Imprimir</button>
+  </div>
+</div>
+
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

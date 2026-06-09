@@ -1,0 +1,419 @@
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #2b2b2b;
+  color: #f5f5f5;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+/* =========================
+   NAVEGAÇÃO
+========================= */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.nav-links a {
+  padding: 10px 18px;
+  background: #3a3a3a;
+  color: #f5f5f5;
+  border: 1px solid #5a5a5a;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  border-color: #d4af37;
+  color: #d4af37;
+}
+
+.nav-links a.ativo {
+  background: #d4af37;
+  color: #1f1f1f;
+  border-color: #d4af37;
+}
+
+.nav-button {
+  width: auto;
+  padding: 10px 18px;
+  background: #3a3a3a;
+  color: #f5f5f5;
+  border: 1px solid #5a5a5a;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.nav-button:hover {
+  border-color: #ef4444;
+  background: #4a4a4a;
+  color: #ef4444;
+}
+
+.auth-painel {
+  max-width: 480px;
+}
+
+.auth-subtitulo {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #bdbdbd;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.auth-link a {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+input[readonly] {
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+/* =========================
+   TITULOS
+========================= */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #d4af37;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #d4af37;
+  font-size: 22px;
+}
+
+h3 {
+  text-align: center;
+}
+
+/* =========================
+   PAINEL
+========================= */
+.painel {
+  max-width: 700px;
+  margin: 20px auto;
+  background: #3a3a3a;
+  border: 1px solid #4a4a4a;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  background: #4a4a4a;
+  color: #fff;
+  border: 1px solid #5a5a5a;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #d4af37;
+}
+
+input::placeholder {
+  color: #bdbdbd;
+}
+
+/* =========================
+   FIELDSET
+========================= */
+fieldset {
+  border: 1px solid #5a5a5a;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+legend {
+  color: #d4af37;
+  font-weight: 600;
+  padding: 0 8px;
+}
+
+/* =========================
+   SERVIÇOS
+========================= */
+
+.cortes,
+.extras {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.extras {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #5a5a5a;
+}
+
+.opcao-servico {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  background: #4a4a4a;
+  border: 1px solid #5a5a5a;
+  border-radius: 10px;
+
+  padding: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.opcao-servico:hover {
+  border-color: #d4af37;
+}
+
+.opcao-servico input[type="radio"],
+.opcao-servico input[type="checkbox"] {
+  width: auto;
+  transform: scale(1.15);
+  flex-shrink: 0;
+}
+
+.nome-servico {
+  flex: 1;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.valor-servico {
+  color: #d4af37;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.opcao-servico:has(input:checked) {
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.12);
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.2);
+}
+
+/* =========================
+   TOTAL
+========================= */
+.total {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #4ade80;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+
+  background: #d4af37;
+  color: #1f1f1f;
+
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #c19b2c;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   MENSAGENS
+========================= */
+.mensagem {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mensagem.sucesso {
+  color: #4ade80;
+}
+
+.mensagem.erro {
+  color: #ef4444;
+}
+
+/* =========================
+   ADMIN PREÇOS
+========================= */
+.precos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.precos label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.precos button {
+  grid-column: 1 / -1;
+}
+
+/* =========================
+   AGENDA
+========================= */
+.lista-admin,
+#listaAgendamentos,
+#listaClientes {
+  list-style: none;
+}
+
+.lista-admin li,
+#listaAgendamentos li,
+#listaClientes li {
+  background: #4a4a4a;
+  border: 1px solid #5a5a5a;
+  border-left: 4px solid #d4af37;
+
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.lista-admin li button,
+#listaAgendamentos li button,
+#listaClientes li button {
+  margin-top: 10px;
+}
+
+.btn-perigo {
+  background: #ef4444;
+  color: #fff;
+}
+
+.btn-perigo:hover {
+  background: #dc2626;
+}
+
+/* =========================
+   COMPROVANTE
+========================= */
+#comprovante {
+  display: none;
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+
+  background: white;
+  color: black;
+
+  border-radius: 8px;
+  font-family: monospace;
+}
+
+#comprovante h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#comprovante hr {
+  margin: 10px 0;
+}
+
+#comprovante p {
+  margin: 5px 0;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 600px) {
+  .painel {
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .opcao-servico {
+    padding: 14px;
+  }
+}
+
+/* =========================
+   IMPRESSÃO
+========================= */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #comprovante,
+  #comprovante * {
+    visibility: visible;
+  }
+
+  #comprovante {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}

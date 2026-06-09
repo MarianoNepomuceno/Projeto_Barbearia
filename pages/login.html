@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="nav-links">
+    <a href="../pages/login.html" class="ativo">Login</a>
+    <a href="../pages/cadastro.html">Cadastro</a>
+  </nav>
+
+  <div class="painel auth-painel">
+    <h1>Login</h1>
+    <p class="auth-subtitulo">Entre com sua conta.</p>
+
+    <form id="formLogin" class="formulario">
+      <input type="email" id="email" placeholder="E-mail" required>
+      <input type="password" id="senha" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+
+    <div id="mensagem" class="mensagem"></div>
+
+    <!--<p class="auth-link">
+      Não tem conta? <a href="../pages/cadastro.html">Cadastre-se</a>
+    </p>-->
+  </div>
+
+  <script src="../assets/js/auth.js"></script>
+  <script>
+    const form = document.getElementById("formLogin");
+    const mensagem = document.getElementById("mensagem");
+
+    getCurrentUser().then((usuario) => {
+      if (usuario) {
+        window.location.href = redirectByTipo(usuario.tipo);
+      }
+    });
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      try {
+        const data = await apiRequest("auth/login.php", {
+          method: "POST",
+          body: JSON.stringify({
+            email: document.getElementById("email").value.trim(),
+            senha: document.getElementById("senha").value,
+          }),
+        });
+
+        window.location.href = redirectByTipo(data.usuario.tipo);
+      } catch (error) {
+        mostrarMensagemAuth(mensagem, error.message, "erro");
+      }
+    });
+  </script>
+</body>
+</html>

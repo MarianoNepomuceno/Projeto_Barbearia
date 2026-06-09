@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Perfil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="nav-links">
+    <a href="../index.html">Agendamento</a>
+    <a href="perfil.html" class="ativo">Meu Perfil</a>
+    <button type="button" id="btnLogout" class="nav-button">Sair</button>
+  </nav>
+
+  <div class="painel auth-painel">
+    <h1>Meu Perfil</h1>
+    <p class="auth-subtitulo">Atualize suas informações pessoais.</p>
+
+    <form id="formPerfil" class="formulario">
+      <input type="text" id="nome" placeholder="Nome completo" required>
+      <input type="email" id="email" placeholder="E-mail" required>
+      <input type="tel" id="telefone" placeholder="WhatsApp (ex: 99 9xxxx-xxxx)" required>
+
+      <fieldset class="servicos">
+        <legend>Alterar senha (opcional)</legend>
+        <input type="password" id="senhaAtual" placeholder="Senha atual">
+        <input type="password" id="novaSenha" placeholder="Nova senha (mínimo 6 caracteres)" minlength="6">
+      </fieldset>
+
+      <button type="submit">Salvar alterações</button>
+    </form>
+
+    <div id="mensagem" class="mensagem"></div>
+  </div>
+
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/perfil.js"></script>
+</body>
+</html>
